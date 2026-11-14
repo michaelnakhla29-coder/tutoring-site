@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ACT &amp; Math Tutoring | From Algebra 1 to Calculus</title>
+<meta name="description" content="One-on-one ACT and math tutoring over Zoom from a 35 ACT scorer. $20 per hour. Book by DM on Instagram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7FD; --surface:#FFFFFF; --ink:#141A4A; --muted:#51587F; --line:#DADEF2;
+  --blue:#2A3FE0; --blue-soft:#E6E9FF; --sun:#FFC933; --on-blue:#FFFFFF; --grid:#DDE1F5;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1230; --surface:#171C47; --ink:#EEF0FF; --muted:#A9B0DA; --line:#2B3270;
+    --blue:#7F8DFF; --blue-soft:#222A68; --on-blue:#0E1230; --grid:#1D2358; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1230; --surface:#171C47; --ink:#EEF0FF; --muted:#A9B0DA; --line:#2B3270;
+  --blue:#7F8DFF; --blue-soft:#222A68; --on-blue:#0E1230; --grid:#1D2358; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.02em;line-height:1.05}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;margin-bottom:16px}
+.lede{color:var(--muted);max-width:56ch;font-size:1.125rem}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font:800 1.2rem var(--display);text-decoration:none;letter-spacing:-.02em}
+.links{display:flex;gap:22px;align-items:center}
+.links a{text-decoration:none;font-weight:500;font-size:.97rem;color:var(--muted)}
+.links a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--blue);color:var(--on-blue)!important;font-weight:700;text-decoration:none;padding:14px 26px;border-radius:999px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.small{padding:9px 18px;font-size:.93rem}
+.btn.ghost{background:transparent;color:var(--ink)!important;border:2px solid var(--line)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:96px 0 104px;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:44px 44px;background-position:-1px -1px}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800}
+.hero p.lede{margin:24px 0 32px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.plot{width:100%;height:auto;display:block}
+.plot .axis{stroke:var(--muted);stroke-width:1.5}
+.plot .curve{fill:none;stroke:var(--blue);stroke-width:5;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 1.8s .3s ease-out forwards}
+.plot .pt{fill:var(--sun);stroke:var(--ink);stroke-width:2.5;opacity:0;animation:pop .4s 2s ease-out forwards}
+.plot text{font:700 15px var(--body);fill:var(--ink)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.plot .curve{animation:none;stroke-dashoffset:0}.plot .pt{animation:none;opacity:1}.btn{transition:none}html{scroll-behavior:auto}}
+
+/* proof */
+.proof{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.score{background:var(--blue);color:var(--on-blue);border-radius:28px;padding:40px}
+.score b{font:800 7rem/1 var(--display);display:block;letter-spacing:-.04em}
+.score span{font-size:1.1rem;font-weight:500}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+caption{text-align:left;font:700 1.1rem var(--display);padding:0 0 12px}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+td:last-child{font-weight:700;text-align:right}
+td:last-child.now{color:var(--blue)}
+.tablewrap{overflow-x:auto}
+
+/* teach */
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+.col{padding-top:20px;border-top:4px solid var(--blue)}
+.col h3{font-size:1.4rem;margin-bottom:10px}
+.col p{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.chips span{background:var(--blue-soft);padding:8px 16px;border-radius:999px;font-weight:500;font-size:.97rem}
+
+/* steps */
+ol.steps{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding-top:56px}
+ol.steps li::before{content:counter(s);position:absolute;top:0;left:0;width:40px;height:40px;border-radius:50%;background:var(--sun);color:#141A4A;font:800 1.2rem/40px var(--display);text-align:center}
+ol.steps h3{font-size:1.2rem;margin-bottom:6px}
+ol.steps p{color:var(--muted);font-size:1rem}
+
+/* pricing */
+.price{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.pricecard{background:var(--surface);border:2px solid var(--ink);border-radius:28px;padding:40px;box-shadow:10px 10px 0 var(--blue)}
+.pricecard .amt{font:800 4.5rem/1 var(--display);letter-spacing:-.04em}
+.pricecard .amt small{font:500 1.2rem var(--body);color:var(--muted);letter-spacing:0}
+.pricecard ul{list-style:none;padding:0;margin:24px 0 28px;display:grid;gap:10px}
+.pricecard li::before{content:"✓";color:var(--blue);font-weight:800;margin-right:10px}
+
+/* final */
+.final{text-align:center;background:var(--blue);color:var(--on-blue)}
+.final h2{max-width:18ch;margin-inline:auto}
+.final p{margin:0 auto 32px;max-width:48ch;opacity:.92}
+.final .btn{background:var(--sun);color:#141A4A!important}
+footer{padding:32px 0;color:var(--muted);font-size:.93rem}
+
+@media (max-width:860px){
+  section{padding:64px 0}
+  .hero .wrap,.proof,.price{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr}
+  ol.steps{grid-template-columns:1fr 1fr}
+  .links a:not(.btn){display:none}
+  .score b{font-size:5.5rem}
+}
+@media (max-width:480px){ol.steps{grid-template-columns:1fr}.pricecard{padding:28px}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">EB ACT &amp; Math Tutoring</a>
+    <div class="links">
+      <a href="#about">About</a><a href="#teach">Subjects</a><a href="#how">How it works</a><a href="#pricing">Pricing</a>
+      <a class="btn small" href="https://www.instagram.com/eb_act_math_tutoring/" target="_blank" rel="noopener">DM to book</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Math and ACT tutoring from someone who just did it.</h1>
+      <p class="lede">One-on-one Zoom sessions for students from Algebra 1 through test day. I scored a 35 on the ACT on my first try, and I teach the exact methods and resources that got me there.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://www.instagram.com/eb_act_math_tutoring/" target="_blank" rel="noopener">DM me on Instagram to book</a>
+        <a class="btn ghost" href="#pricing">See pricing</a>
+      </div>
+    </div>
+    <svg class="plot" viewBox="0 0 400 340" role="img" aria-label="A parabola with its vertex marked, drawn on a coordinate plane">
+      <line class="axis" x1="20" y1="290" x2="385" y2="290"/>
+      <line class="axis" x1="200" y1="20" x2="200" y2="310"/>
+      <path class="curve" d="M45 40 Q200 520 355 40"/>
+      <circle class="pt" cx="200" cy="280" r="9"/>
+      <text x="214" y="270">vertex</text>
+      <text x="300" y="312">x</text>
+      <text x="208" y="36">y</text>
+    </svg>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap proof">
+    <div class="score">
+      <b>35</b>
+      <span>on the ACT, first attempt. I know which skills move your score and which resources are worth your time.</span>
+    </div>
+    <div>
+      <h2>The grades behind the teaching.</h2>
+      <p class="lede" style="margin-bottom:24px">I’ve worked through the whole math sequence at the honors level, so I know where students get stuck and how to get them unstuck.</p>
+      <div class="tablewrap">
+      <table>
+        <caption>My math record</caption>
+        <tbody>
+          <tr><td>Algebra 1 Honors</td><td>A</td></tr>
+          <tr><td>Algebra 2 Honors</td><td>A</td></tr>
+          <tr><td>Geometry with Trigonometry</td><td>A+</td></tr>
+          <tr><td>Pre-Calculus Honors</td><td>A+</td></tr>
+          <tr><td>Calculus BC (in progress)</td><td class="now">A</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="teach">
+  <div class="wrap">
+    <h2>What we can work on.</h2>
+    <p class="lede">Bring a topic, a homework set, or a target score. We start wherever you are.</p>
+    <div class="cols">
+      <div class="col"><h3>ACT prep</h3><p>Strategy for every section, pacing that stops you running out of time, and a clear plan for raising your score on the next test.</p></div>
+      <div class="col"><h3>School math</h3><p>Step-by-step help with homework, quizzes, and exams, with the reasoning explained so it sticks.</p></div>
+      <div class="col"><h3>Building foundations</h3><p>Filling gaps from earlier courses so the current class finally makes sense.</p></div>
+    </div>
+    <div class="chips" aria-label="Math subjects">
+      <span>Algebra 1</span><span>Geometry</span><span>Algebra 2</span><span>Trigonometry</span><span>Pre-Calculus</span><span>Calculus</span><span>ACT Math</span><span>ACT Strategy</span>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How to get started.</h2>
+    <p class="lede">Booking takes one message.</p>
+    <ol class="steps">
+      <li><h3>DM me</h3><p>Message me on Instagram with what you need help with and your grade or target score.</p></li>
+      <li><h3>Pick a time</h3><p>We find a one-hour slot that works for your schedule.</p></li>
+      <li><h3>Meet on Zoom</h3><p>You get a link, and we work through your material together live.</p></li>
+      <li><h3>Study on your own</h3><p>I send resources and a clear list of what to practice before the next session.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="alt" id="pricing">
+  <div class="wrap price">
+    <div>
+      <h2>Simple pricing.</h2>
+      <p class="lede">One flat rate, no packages or contracts. Book a session when you need one.</p>
+    </div>
+    <div class="pricecard">
+      <div class="amt">$20<small> / hour</small></div>
+      <ul>
+        <li>One-hour one-on-one Zoom session</li>
+        <li>Any math subject or ACT prep</li>
+        <li>Study resources so you know what to practice</li>
+        <li>Scheduling by Instagram DM</li>
+      </ul>
+      <a class="btn" href="https://www.instagram.com/eb_act_math_tutoring/" target="_blank" rel="noopener">DM to schedule</a>
+    </div>
+  </div>
+</section>
+
+<section id="resources">
+  <div class="wrap">
+    <h2>You’ll know what to study between sessions.</h2>
+    <p class="lede">Tutoring works best when you practice in between. After each session, I share the resources and tips I used to get a 35, plus exactly which topics and question types to focus on next, so you can keep improving on your own.</p>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Ready for your first session?</h2>
+    <p>Send me a DM on Instagram with your grade, your subject, and any test dates coming up.</p>
+    <a class="btn" href="https://www.instagram.com/eb_act_math_tutoring/" target="_blank" rel="noopener">Message me on Instagram</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 EB ACT &amp; Math Tutoring (@eb_act_math_tutoring). Sessions are held on Zoom and booked through Instagram DMs.</div>
+</footer>
+
+</body>
+</html>
